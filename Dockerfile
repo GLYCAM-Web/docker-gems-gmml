@@ -1,4 +1,5 @@
 FROM python:3.5.1
+
 LABEL maintainer "GLYCAM-Web <glycam@gmail.com>"
 
 ENV GEMSHOME=/programs/gems/ PYTHON_HOME=/usr/local/include/python3.5m GEMSMAKEPROCS=4
@@ -27,7 +28,6 @@ RUN apt-get update && \
 # TODO I would like to make the branch be a variable, so the stable branch of GEMS and GMML
 #       gets cloned and compiled into the stable version of the Docker image.
 #       This may be a use case for the ARG Dockerfile command.
-# TODO The first RUN and second RUN could probably be combined to a single layer.
 # Clone the current version of GEMS and GMML dev branches into the image and compile them.
 # This can be overridden by mounting a new host directory to /programs/gems/
 RUN mkdir /programs/; \
