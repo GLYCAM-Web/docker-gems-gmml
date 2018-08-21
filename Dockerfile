@@ -1,7 +1,9 @@
 FROM python:3.5.1
 
+# https://github.com/GLYCAM-Web
 LABEL maintainer "GLYCAM-Web <glycam@gmail.com>"
 
+# Environment variables used by GEMS/GMML for compilation.
 ENV GEMSHOME=/programs/gems/ PYTHON_HOME=/usr/local/include/python3.5m GEMSMAKEPROCS=4
 
 # Update and install packages then set the timezone inside the image and create a user.
@@ -25,9 +27,6 @@ RUN apt-get update && \
       --create-home \
       glycam;
 
-# TODO I would like to make the branch be a variable, so the stable branch of GEMS and GMML
-#       gets cloned and compiled into the stable version of the Docker image.
-#       This may be a use case for the ARG Dockerfile command.
 # Clone the current version of GEMS and GMML dev branches into the image and compile them.
 # This can be overridden by mounting a new host directory to /programs/gems/
 RUN mkdir /programs/; \

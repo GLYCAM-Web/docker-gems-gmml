@@ -14,7 +14,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ``docker pull glycamweb/gems-gmml``
 
-### Usage
+### Usages
+
+
+#### Usage #1: Basic Usage
 
 ```
 docker run \
@@ -28,7 +31,7 @@ To test everything is compiled correctly, you can run the command:
 
 ``bash test_installation.bash``
 
-#### Compile your local version of GEMS/GMML
+#### Usage #2: Compile your local version of GEMS/GMML
 
 ```
 docker run \
@@ -45,7 +48,7 @@ Your version of GEMS/GMML are not compiled yet, so you should first run the comm
 
 This will compile your version of GMML and wrap it into GEMS. This may take a little bit of time, so now is a good time to grab some coffee.
 
-#### Using GEMS/GMML as a library for another program
+#### Usage #3: Using GEMS/GMML as a library for another program
 
 As an example, [GlycoProtein Builder](https://github.com/gitoliver/GlycoProteinBuilder) is a program developed by Oliver Grant, which uses GMML functionality. In this example, we will use the Docker image to compile GlycoProtein Builder inside the image.
 
@@ -62,7 +65,7 @@ This command will start a Docker container with the precompiled version of GEMS/
 ### ENVIRONMENT VARIABLES
 
 A list of predefined ENV variables in the Docker image.
-See https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file
+See https://docs.docker.com/engine/reference/commandline/run/#set-environment-variables--e---env---env-file for how to define them.
 
 #### ```GEMSHOME```
 
