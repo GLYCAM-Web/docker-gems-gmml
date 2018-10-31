@@ -26,6 +26,8 @@ RUN apt-get update && \
       --shell /bin/bash \
       --create-home \
       glycam;
+      
+ADD .bashrc /home/glycam/
 
 # Clone the current version of GEMS and GMML dev branches into the image and compile them.
 # This can be overridden by mounting a new host directory to /programs/gems/
